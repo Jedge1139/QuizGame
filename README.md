@@ -18,6 +18,7 @@ Define (in English) the term "scope" as it relates to computer programming in a 
 Use final with a variable and describe what it means in a comment
 Use casting and describe what it means in a comment (optional for 1, required for 2)
 Format strings using escape sequences (optional for 1, required for 2)
+
 Sprint / Milestone 2
 Create a method with arguments and return values
 Identify a method call and argument in comments
@@ -29,6 +30,7 @@ Create ternary constructs
 Use a switch statement
 Compare two String objects by using the compareTo and equals methods and make a comment describing how == works with objects
 Use +, -, *, /, %, ++, --, += 
+
 Use relational operators
 Use conditional operators
 Describe operator precedence as a comment
@@ -37,6 +39,7 @@ Create and use for loops
 Create and use do/while loops
 Use break in a loop with a comment describing what it does
 Use continue in a loop with a comment describing what it does
+
 Sprint / Milestone 3
 Make a class in a separate file with private fields, public getters and setters, a constructor with and without parameters
 Overload a method
