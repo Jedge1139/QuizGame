@@ -34,9 +34,6 @@ public class Main {
 		System.out.println("Each question is worth " + quesPoints + " points for a total of " + pointsMax+"." );
 		
 		
-		
-		
-		
 
 	}
 
