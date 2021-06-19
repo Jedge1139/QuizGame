@@ -2,7 +2,7 @@ package QuizGame;
 
 import java.util.*;
 import java.util.Random;
-import java.lang.Math;
+
 
 //Jacob Edge
 //A Quiz game about programming and items that I have learned in COP 2006.
@@ -19,6 +19,15 @@ import java.lang.Math;
 */
 /*Operators precedence is when operators on the same line have equal precedence. When operators of equal precedence appear in the same expression, a rule must govern which is evaluated first.
 /All binary operators except for the assignment operators are evaluated from left to right; assignment operators are evaluated right to left.
+* Inheritance
+*Object-oriented programming allows classes to inherit commonly used state and behavior from other classes. 
+*This is done by extending the super class to a sub class using the extends command.
+*This is useful for creating one super class that describes a certain group and then you can create specific sub classes from the super class
+*that go into specifics about the subgroups of the main group while allowing you to use the code that was created in the super class.
+*Polymorphism
+*In java this refers to a sub class containing differing behaviors from the main class but still having some of the same functionality of the 
+*super class that it is dervied from. 
+*
 */
 public class Main {
 	
@@ -26,7 +35,7 @@ public class Main {
 		
 		
 		System.out.println("Hello and Welcome to this Quiz Game!");
-		System.out.println("Is this your first time taking the quiz? : ");
+		System.out.println("Is this your first time taking the quiz? Enter True or False.: ");
 		Scanner scan = new Scanner(System.in);
 		//The == is how something in java is made equal without using .equals or .compareTo for strings.
 		if(scan.nextBoolean()==true) {
@@ -130,22 +139,134 @@ public class Main {
 		int sum = 0;
 		int number = 0;
 		Scanner numInput = new Scanner(System.in);
-		 do {
+		do {
 			 sum += number;
 			 System.out.println("Enter a number: ");
 			 number = numInput.nextInt();
 			
-			 
 		 }
 		while(sum >= 0);
-		 System.out.println("The sum is: " + sum);
-	numInput.close();		
+		 System.out.println("The sum is: " + sum);	
 	//This portion of code makes use of the ternary operator
 	int value1 = 5;
 	String message =value1 >= 10 ?"Number is greater than 10":"Number is less than or equal to 10"; 
 	System.out.println(message);
+	//This portion of code makes use of a switch statement.
+	System.out.println("This switch prints out speific quesitons from the questions array.");
+	int value4 = 3;
+	switch (value4) {
+		case 1:
+			System.out.println(q1);
+			break;
+		case 2:
+			System.out.println(q2);
+			break;
+		case 3:
+			System.out.println(q3);
+			break;
+		case 4:
+			System.out.println(q4);
+			break;
+		case 5:
+			System.out.println(q5);
+			break;
+		default:
+			System.out.println("No output");
+	}
+	//
+	double newDouble = 9.59;
+	int newInt = (int) newDouble;
+	System.out.println("This code shows a double before it is casted to an int "+ newDouble + ".");
+	System.out.println("This code shows the use of casting a double to an int " + newInt + ".");
+	//This portion of code compares the length of question 1 to question 4.
+	System.out.println("This code compares the length of Question to Question 4 " + q1.compareTo(q4));
+	//
+	int loop1 = 0;
+	while(loop1<10) {
+		if(loop1 == 6) {
+			loop1++;
+			continue;
+		}
+		System.out.println(loop1);
+		loop1++;
+	}
+	//
+	int overLoadInt = addMethod(5,3);
+	double overLoadDouble = addMethod(2.67,4.78);
+	System.out.println("Example of an method overload using int: " +overLoadInt);
+	System.out.println("Example of an method overload using Double: " +overLoadDouble);
+	//
+	int[] oneDimeArray;
+	oneDimeArray = new int[10];
+	
+	oneDimeArray[0] = 5;
+	oneDimeArray[1] = 10;
+	oneDimeArray[2] = 15;
+	oneDimeArray[3] = 20;
+	oneDimeArray[4] = 25;
+	oneDimeArray[5] = 30;
+	oneDimeArray[6] = 35;
+	oneDimeArray[7] = 40;
+	oneDimeArray[8] = 45;
+	oneDimeArray[9] = 50;
 	
 	
+	System.out.println("Smallest value of the Array: " + getSmallest(oneDimeArray,10));
+	//This section of code sums the oneDimeArray using an enhanced for loop.
+	int arraySum = 0;
+	for(int numArray: oneDimeArray) {
+		arraySum += numArray;
+	}
+	
+	System.out.println("The sum of this Array is: " + arraySum);
+	//This code shows a try catch block in a while loop that would print an exception if an integer is not inputed.
+	 Scanner tryCatch=new Scanner(System.in);
+	 System.out.println("Pleas input an integer: ");
+     boolean gottenGoodInput = false;
+     while(gottenGoodInput == false){
+         
+         try{
+             int input=tryCatch.nextInt();
+             System.out.println(input);
+             gottenGoodInput = true;
+         }
+         catch(InputMismatchException exception){
+             System.out.println("Try Again");
+             tryCatch.nextLine();
+         }
+     }
+     
+     //This code Declares, instantiates, initializes and uses multi-dimensional array.
+     int arr[][] = 
+    	 {{4,3},{7,8},{9,4},};
+     System.out.println("This prints out array arr: " +arr[2][1]);
+     //This portion of code makes use of an Array list of key terms in Java and gets the term located in index 1.
+     ArrayList<String> keyTerms = new ArrayList<String>();
+     keyTerms.add("Inheritance ");
+     keyTerms.add("Polymorphism");
+     keyTerms.add("Methods");
+     keyTerms.add("Classes");
+     keyTerms.add("Constructor");
+     keyTerms.add("Header");
+     keyTerms.add("Parameter");
+     keyTerms.add("Loops");
+     keyTerms.add("Conditional Operators");
+     keyTerms.add("Relational Operators ");
+     keyTerms.add("Switch");
+     
+     System.out.println("This code prints out a key term from an Array List: " + keyTerms.get(1));
+
+	}
+	// Both int x and y are parameter
+	public static int addMethod(int x, int y) {
+		return x + y;
+	}
+	public static double addMethod(double x, double y) {
+		return x + y;
+	}
+	public static int getSmallest(int[] oneDimeArray, int total) {
+		Arrays.sort(oneDimeArray);
+		return oneDimeArray[0];
 	}
 	//this following line of code is a method header 
 	public static void takeQuiz(Question [] questions) {
@@ -153,10 +274,10 @@ public class Main {
 		Scanner quesAnswer = new Scanner(System.in);
 		//This Following code shows a For loop formatted correctly. 
 		for(int i = 0;i <questions.length;i++) {
-			System.out.println(questions[i].prompt);
+			System.out.println(questions[i].getPrompt());
 			String answer = quesAnswer.nextLine();
 			
-			if(answer.equals(questions[i].answer)) {
+			if(answer.equals(questions[i].getAnswer())) {
 				points++;
 			}
 		}
