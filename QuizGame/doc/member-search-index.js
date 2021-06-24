@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"QuizGame","c":"Question","l":"getAnswer()"},{"p":"QuizGame","c":"Question","l":"getPrompt()"},{"p":"QuizGame","c":"Question","l":"Question()","u":"%3Cinit%3E()"},{"p":"QuizGame","c":"Question","l":"Question(String, String)","u":"%3Cinit%3E(java.lang.String,java.lang.String)"}];updateSearchResults();
